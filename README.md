@@ -1,4 +1,5 @@
-# Pulovers Macro Creator for AHKv2 via Ahkv2converter
+# Pulovers Macro Creator for AHKv2
+A modified version of Pulover's Macro Creator for AHKv2 via ahkv2converter
 
 I'll be adding more details here soon.
 
