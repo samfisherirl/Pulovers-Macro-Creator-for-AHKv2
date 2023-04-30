@@ -1,4 +1,4 @@
-# A modified version of Pulovers Macro Recorder for AHKv2
+# Pulovers Macro Recorder for AHKv2 via Ahkv2converter
 
 I'll be adding more details here soon.
 
