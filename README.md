@@ -1,4 +1,4 @@
-# Pulover-s-Macro-Recorder-for-AHKv2
+# Pulovers Macro Recorder for AHKv2
 A modified version of Pulover's Macro Recorder for AHKv2
 
 I'll be adding more details here soon.
