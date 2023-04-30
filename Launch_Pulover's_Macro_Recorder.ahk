@@ -1,11 +1,10 @@
 ﻿#Requires Autohotkey v2.0
 #SingleInstance Force
-#Include complete_application\convert\ConvertFuncs.ahk
-#Include complete_application\convert\_menu_handler_mod.ahk
+#Include lib\convert\ConvertFuncs.ahk
 ;AutoGUI 2.5.8
 ;Auto-GUI-v2 credit to autohotkey.com/boards/viewtopic.php?f=64&t=89901
 ;AHKv2converter credit to github.com/mmikeww/AHK-v2-script-converter
-exe := "`"" A_ScriptDir "\complete_application\AutoHotKey Exe\AutoHotkeyV1.exe`" "     ; specify the path to the AutoHotkey V1 executable
+exe := "`"" A_ScriptDir "\lib\AutoHotKey Exe\AutoHotkeyV1.exe`" "     ; specify the path to the AutoHotkey V1 executable
 autogui := "`"" A_ScriptDir "\important\MacroCreator.ahk`""   ; specify the path to the AutoGUI script
 com := exe autogui     ; concatenate the two paths
 Run(com, , , &PID)     ; run the concatenated command, which launches AutoGUI

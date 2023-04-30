@@ -1,0 +1,25 @@
+﻿
+;AutoGUI 2.5.8 
+;Auto-GUI-v2 credit to Alguimist autohotkey.com/boards/viewtopic.php?f=64&t=89901
+;AHKv2converter credit to github.com/mmikeww/AHK-v2-script-converter
+
+myGui := Gui()
+myGui.Add("ComboBox", "x218 y107 w120", ["ComboBox"])
+myGui.Add("Picture", "x121 y130 w0 h0", "mspaint.exe")
+myGui.Add("MonthCal", "x285 y199 w225 h160")
+ogcButtonOK := myGui.Add("Button", "x4 y82 w80 h23", "&OK")
+ogcButtonOK.OnEvent("Click", ButtonHandler)
+myGui.Title := "Window"
+myGui.Show("w620 h420")
+Return
+
+ButtonHandler(*)
+{
+	ToolTip "Click! This is a sample action, you clicked  ==> a button.", 20, 20
+	SetTimer () => ToolTip(), -2000 ; timer expires in 2 seconds and tooltip disappears
+}
+GuiEscape(*)
+{ ; V1toV2: Added bracket
+GuiClose:
+    ExitApp()
+} ; Added bracket in the end
