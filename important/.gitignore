@@ -1,0 +1,43 @@
+/Compiled/
+/Site/
+/Documentation/MacroCreator_Help-doc/*.html
+/Documentation/MacroCreator_Help-doc/Commands/*.html
+/Documentation/MacroCreator_Help-doc/hha.dll
+/Documentation/MacroCreator_Help-doc/default.css
+/Screenshots/
+/*.pmc
+/*.txt
+*.exe
+*.chm
+*.ini
+*.iss
+*.hhc
+*.hhk
+*.hhp
+*.lnk
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+### VS Code ###
+.vscode/

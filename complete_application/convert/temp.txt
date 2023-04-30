@@ -1,0 +1,28 @@
+﻿
+;AutoGUI 2.5.8 
+;Auto-GUI-v2 credit to Alguimist autohotkey.com/boards/viewtopic.php?f=64&t=89901
+;AHKv2converter credit to github.com/mmikeww/AHK-v2-script-converter
+
+myGui := Gui()
+myGui.Add("ComboBox", "x218 y107 w120", ["ComboBox"])
+myGui.Add("Picture", "x121 y130 w0 h0", "mspaint.exe")
+myGui.Add("MonthCal", "x285 y199 w225 h160")
+myGui.Title := "Window"
+myGui.Show("w620 h420")
+Return
+GuiEscape(*)
+{ ; V1toV2: Added bracket
+GuiClose:
+    ExitApp()
+} ; Added bracket in the end
+Gui Add, ComboBox, x218 y107 w120, ComboBox
+Gui Add, Picture, x121 y130 w0 h0, mspaint.exe
+Gui Add, MonthCal, x285 y199 w225 h160
+Gui Add, Button, x4 y82 w80 h23, &OK
+
+Gui Show, w620 h420, Window
+Return
+
+GuiEscape:
+GuiClose:
+    ExitApp
