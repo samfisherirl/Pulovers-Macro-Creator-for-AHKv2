@@ -13,7 +13,6 @@ I did very little work weaving these two solutions together when looking at the 
 - this runs Pulover on ahkv1
 - Conversion happens in IDE, saving the code output hasn't been tested but will be. 
 - function-call converts to v2 with ahkv2converter 
-- autogui has custom code posted in the changes_of_note folder
 - works with embedded ahk exe's from ahkconverter, you do not need ahkv1 or v2, hypothetically this should run portably
 
 
