@@ -2,7 +2,7 @@
 
 I'll be adding more details here soon.
 
-- Auto-GUI-v2 credit to Mr. Pulover and all the credited creators listed here: https://github.com/Pulover/PuloversMacroCreator
+- Pulovers Macro Recorder credit to Mr. Pulover and all the credited creators listed here: https://github.com/Pulover/PuloversMacroCreator
   (will enumerate all credits soon)
 
 - AHKv2converter credit to mmikeww and his team https://github.com/mmikeww/AHK-v2-script-converter
