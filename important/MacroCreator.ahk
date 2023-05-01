@@ -1608,57 +1608,88 @@ TB_Edit(tbPrevF, "CommentUnchecked", CommentUnchecked)
 Gui, chMacro:Default
 return
 
-READER:
-global lastPreview, Preview
+
 /*
-PrevPtr.SetReadOnly(0x0), PrevPtr.ClearAll(), PrevPtr.SetText("", Preview)
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+changes
+1. make sure only the empty file and temp file exist
+2. write to temp file, then move to log's location
+3. log will get read and return a "returnstatus" Message
+4. that last step denotes the conversion to v2 happened
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 */
-if (lastPreview != Preview) {
-	lastPreview := Preview
-	logs := A_ScriptDir . "\log.txt"    ; set the path to the log file
-	empty := A_ScriptDir . "\empty.txt"    ; set the path to an empty file
-	temps := A_ScriptDir . "\temporary.txt"    ; set the path to a temporary file
-	trash := A_ScriptDir . "\trash.txt"    ; set the path to a temporary file
-	retstat := A_ScriptDir . "\return.txt"    ; set the path to the return status file
-	blankvar:=""
 
-	if FileExist(logs) {
-		FileMove, %logs%, %trash%, 1
-	}
-	if FileExist(empty) {
-		FileCopy, %empty%, %temps%, 1
-	}
-	else {
-		FileAppend, %blankvar%, %empty%
-		FileCopy, %empty%, %temps%, 1
-	}
-	if FileExist(retstat){
-		FileMove, %retstat%, %trash%, 1
-	}
-	FileAppend, %Preview%, %temps%
-	FileCopy, %temps%, %logs%, 1
+/*
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+changes
+1. make sure only the empty file and temp file exist
+2. write to temp file, then move to log's location
+3. log will get read and return a "returnstatus" Message
+4. that last step denotes the conversion to v2 happened
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+*/
+READER:
+	global lastPreview, Preview
+	/*
+	PrevPtr.SetReadOnly(0x0), PrevPtr.ClearAll(), PrevPtr.SetText("", Preview)
+	*/
+	if (lastPreview != Preview) {
+		lastPreview := Preview
+		logs := A_ScriptDir . "\log.txt"    ; set the path to the log file
+		empty := A_ScriptDir . "\empty.txt"    ; set the path to an empty file
+		temps := A_ScriptDir . "\temporary.txt"    ; set the path to a temporary file
+		trash := A_ScriptDir . "\trash.txt"    ; set the path to a temporary file
+		retstat := A_ScriptDir . "\return.txt"    ; set the path to the return status file
+		blankvar:=""
 
-	Loop, 1000 {
-		try {
-			if FileExist(retstat) {
-				FileRead, code, %retstat%
-				if (code != "") {
-					Preview := code
-					break
+		if FileExist(logs) {
+			FileMove, %logs%, %trash%, 1
+		}
+		if FileExist(empty) {
+			FileCopy, %empty%, %temps%, 1
+		}
+		else {
+			FileAppend, %blankvar%, %empty%
+			FileCopy, %empty%, %temps%, 1
+		}
+		if FileExist(retstat) {
+			FileMove, %retstat%, %trash%, 1
+		}
+		FileAppend, %Preview%, %temps%
+		FileCopy, %temps%, %logs%, 1
+
+		Loop, 1000 
+		{
+			try {
+				if FileExist(retstat) {
+					FileRead, code, %retstat%
+					if (code != "") {
+						Preview := code
+						break
+					}
+				}
+				Else {
+					Sleep, 10
 				}
 			}
-			Else {
+			catch e {
 				Sleep, 10
 			}
 		}
-		catch e {
-			Sleep, 10
-		}
+		PrevPtr.SetReadOnly(0x0), PrevPtr.ClearAll(), PrevPtr.SetText("", Preview)
 	}
-	PrevPtr.SetReadOnly(0x0), PrevPtr.ClearAll(), PrevPtr.SetText("", Preview)
-}
 Return
 
+
+/*
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+changes
+1. make sure only the empty file and temp file exist
+2. write to temp file, then move to log's location
+3. log will get read and return a "returnstatus" Message
+4. that last step denotes the conversion to v2 happened
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+*/
 
 /*
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -2360,11 +2391,11 @@ return
 <================================================================>
 */
 Export:
-FileSelectFile, SelectedFile, 3, , "Save for exporting", "Autohotkey script (*.ahk; *.ahk2)"
-if (SelectedFile != "") {
-	FileCopy, %empty%, %SelectedFile%, 1
-	FileAppend, %Preview%, %SelectedFile%
-}
+	FileSelectFile, SelectedFile, 3, , "Save for exporting", "Autohotkey script (*.ahk; *.ahk2)"
+	if (SelectedFile != "") {
+		FileCopy, %empty%, %SelectedFile%, 1
+		FileAppend, %Preview%, %SelectedFile%
+	}
 
 /*
 <================================================================>
