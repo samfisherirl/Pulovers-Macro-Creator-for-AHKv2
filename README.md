@@ -1,10 +1,7 @@
 # Pulovers Macro Creator for AHKv2
-A modified version of Pulover's Macro Creator for AHKv2 via ahkv2converter
+A modified version of Pulover's Macro Creator for AHKv2 via ahkv2converter. I have done the same with Easy AutoGui which can be found here: https://github.com/samfisherirl/Easy-Auto-GUI-for-AHK-v2
 
-I'll be adding more details here soon.
-
-- Pulovers Macro Recorder credit to Mr. Pulover and all the credited creators listed here: https://github.com/Pulover/PuloversMacroCreator
-  (will enumerate all credits soon)
+- Pulovers Macro Recorder credit to Mr. Pulover and all the credited creators listed here: https://github.com/Pulover/PuloversMacroCreator. 
 
 - AHKv2converter credit to mmikeww and his team https://github.com/mmikeww/AHK-v2-script-converter
 
