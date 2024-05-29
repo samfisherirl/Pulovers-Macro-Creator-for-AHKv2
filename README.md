@@ -13,6 +13,9 @@ I did very little work weaving these two solutions together when looking at the 
 - function-call converts to v2 with ahkv2converter 
 - works with embedded ahk exe's from ahkconverter, you do not need ahkv1 or v2, hypothetically this should run portably
 
+## Immediate goal
+
+- remove bin and exe files from github repo and warn users who download main.zip to download release 
 
 ![image](https://user-images.githubusercontent.com/98753696/235373727-cc79048a-27f9-4567-81ec-54cba90db332.png)
 ![Produce_15](https://user-images.githubusercontent.com/98753696/235379299-53b639ee-586e-4b95-a282-9d199027d530.GIF)
